@@ -1,0 +1,392 @@
+:root {
+  --color-jaune: #f8e500;
+  --color-jaune1: #eedb0b;
+
+  --color-noir: #181717;
+  --color-blanc: #eee;
+}
+
+* {
+    margin: 0px;
+    padding: 0;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+header nav {
+    background-color: var(--color-noir) !important;
+    backdrop-filter: blur(10px);
+  
+    a.nousContacter1 {
+      display: none;
+    }
+    a.nousContacter2 {
+      display: block;
+    }
+  }
+  
+  .navbar-toggler:focus {
+    outline: none !important;
+    border: none !important;
+  }
+  
+  
+  header nav ul li a {
+    position: relative;
+    color: var(--color-blanc) !important;
+    text-decoration: none;
+  }
+  
+  header nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-jaune1);
+    transition: width 0.5s ease-in-out;
+  }
+  header nav .logo {
+    height: 60px;
+    width: 100%;
+  }
+  header nav .navbar-brand {
+    padding: 0;
+    margin: 0;
+  }
+  
+  header nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  header nav ul li a:hover {
+    color: var(--color-jaune1) !important;
+  }
+
+  /* Styles pour les buttons */
+button.btn-primary {
+    transition: all 0.3s ease; /* Animation de transformation */
+    background: var(--color-jaune);
+    border-color: var(--color-noir);
+    border-width: 2px;
+    text-align: center;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.411);
+    font-weight: 700;
+    color: var(--color-noir);
+  }
+  button.btn-primary:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+    background: var(--color-jaune);
+    border-color: var(--color-jaune);
+    box-shadow: 0px 0px 10px 6px #f8e30034;
+    text-align: center;
+    color: var(--color-noir);
+    text-decoration: underline;
+  }
+
+  /* Section 1 */
+
+section#section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    background-image: url("img/gggrain\ \(2\).svg");
+    background-attachment: fixed;
+}  
+
+/* Styles pour les cartes */
+.card {
+  background-color: #00000017 !important; /* Couleur de fond blanche */
+  border-radius: 15px; /* Coins arrondis */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  text-align: center; /* Centrer le texte */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition pour l'animation */
+  transition: 0.3 !important;
+  border: none !important;
+  cursor: grab;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Légère élévation au survol */
+  box-shadow: 0 8px 30px var(--color-jaune); /* Ombre plus prononcée au survol */
+  background-color: yellow !important; /* Fond bleu ciel */
+  transition: 0.3s !important;
+}
+
+.card h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 18px; /* Taille de la police pour le texte */
+  color: var(--color-noir); /* Couleur du texte */
+  font-style: italic;
+}
+
+.card:hover p {
+  color: var(--color-noir);
+}
+
+/* Styles pour les icônes */
+.card i {
+  font-size: 3rem; /* Taille de l'icône */
+  color: var(--color-noir); /* Couleur de l'icône */
+}
+
+
+/* Section a propos */
+section#apropos {
+  background-image: url("img/servicebackground.svg");
+    background-attachment: fixed;
+    h1 {
+      color: var(--color-jaune1)
+    }
+}
+
+section#apropos .image {
+  height: 100px;
+}
+
+section#apropos div.trait {
+  width: 70px !important;
+  height: 3px !important;
+  background-color: var(--color-jaune);
+}
+
+section#apropos .img-container {
+  height: 300px; /* Hauteur fixe pour le conteneur */
+  overflow: hidden;
+}
+
+section#apropos .about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garde les proportions de l'image tout en remplissant l'espace */
+  object-position: top;
+}
+
+/* Ajustement de la hauteur pour les écrans plus petits */
+@media (max-width: 768px) {
+  section#apropos .img-container {
+      height: 300px;
+  }
+}
+
+/* Ajustement pour les très petits écrans */
+@media (max-width: 576px) {
+  section#apropos .img-container {
+      height: 250px;
+  }
+}
+
+/* Nos services */
+
+section#nosServices {
+  background-image: url("img/servicebackground.svg");
+    background-attachment: fixed;
+}
+section#nosServices h1 {
+  color: var(--color-jaune1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .word-animation {
+    height: 50px;
+    overflow: hidden;
+    span {
+      display: block;
+      animation: rotateSpin 7s infinite;
+      padding: 0px 0px 8px;
+    }
+  }
+}
+
+@keyframes rotateSpin {
+  16% {
+    -webkit-transform: translateY(-102%);
+    transform: translateY(-102%);
+  }
+  32% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  48% {
+    -webkit-transform: translateY(-202%);
+    transform: translateY(-202%);
+  }
+  64% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+  80% {
+    -webkit-transform: translateY(-302%);
+    transform: translateY(-302%);
+  }
+  100% {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+}
+@media screen and (max-width: 768px) {
+  section#nosServices h1 {
+    display: block;
+  }
+  section#nosServices h1 {
+    align-items: end;
+  }
+  section#nosServices .word-animation {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  section#nosServices .word-animation {
+    display: inline-block;
+    margin-top: 10px !important;
+  }
+  section#nosServices .word-animation span {
+    font-size: 25px;
+    padding-bottom: 20px !important;
+  }
+}
+
+section#nosServices div.trait {
+  width: 80px !important;
+  height: 3px !important;
+  background-color: var(--color-jaune1);
+}
+
+section#nosServices div.box {
+  border-right: 2px dashed var(--color-jaune);
+}
+@media screen and (max-width: 768px) {
+  section#nosServices div.box {
+    border-right: none;
+  }
+}
+section#nosServices ul div {
+  border-bottom: 1px solid var(--color-jaune1);
+  margin-left: -30px;
+  padding-right: 30px;
+}
+section#nosServices li {
+  font-size: 20px;
+}
+section#nosServices h4 {
+  font-size: 30px;
+  background-color: #f8e30094;
+  color: var(--color-noir);
+  font-style: italic;
+}
+
+/* Section portefolio */
+
+section#portfolio {
+  background-image: url("img/aproposbackground.svg");
+    background-attachment: fixed;
+}
+
+section#portfolio h1 {
+  background: linear-gradient(to left, #00aaff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+section#portfolio div.trait {
+  width: 80px !important;
+  height: 3px !important;
+  background-color: #007bff;
+}
+
+section#portfolio .portfolio-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+section#portfolio .portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+section#portfolio .card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+section#portfolio .card-img-overlay {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease;
+}
+
+section#portfolio .portfolio-card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+section#portfolio .card-img-overlay button {
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+section#portfolio .portfolio-card:hover .card-img-overlay button {
+  transform: translateY(0);
+}
+
+section#portfolio .portfolio-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+section#portfolio .portfolio-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section#portfolio .nav-link {
+  transition: all 0.3s ease;
+}
+
+section#portfolio.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+section#portfolio.nav-link.active {
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section#portfolio .filter-container {
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+section#portfolio .filter-wrapper {
+  min-width: max-content;
+}
+
+section#portfolio .filter-btn {
+  background: none;
+  border: 3px var(--color-jaune) solid;
+  padding: 8px 16px;
+  margin: 0 4px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+section#portfolio .filter-btn:hover {
+  background-color: var(--color-jaune);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+section#portfolio .filter-btn.active {
+  background-color: var(--color-jaune);
+  color: rgb(81, 51, 51);
+}
